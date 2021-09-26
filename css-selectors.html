@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navigation container">
+        <div class="nav-brand">IamDeveloper</div>
+        <ul class="list-non-bullet nav-pills">
+            <li class="list-item-inline">
+                <a class="link" href="zoyatanweer.html">HOME</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link" href="projects.html">PROJECTS</a>
+            </li>
+            <li class="list-item-inline">
+                <a class="link link-active" href="blogspage.html">BLOGS</a>
+            </li>
+        </ul>
+    </nav>
+    <header class="hero">
+        <h1 class="hero-heading">
+        CSS Selectors <span class="heading-inverted">blog</span>
+        </h1>
+    </header>
+    <article>
+        <h2>CSS Selectors and Combinators</h2>
+        <p>
+            There are quite a few different ways to select elements. In this blog, I tried to discuss all of them.
+            <h2 class="topic-heading">CSS Selectors</h2>
+            <ol>
+                <li class="blog-list">
+                    <h3>Universal Selector (*) </h3>
+                    <p>The <b>universal selector * </b>selects <b>everything </b>in the document. If there are buttons or input on the page, then it will also have the styles applied when written in this selector. This selector is generally not used as this is not considerd as a good practice to have the same exact style all over the page. It's written as :</p>
+                        <br> * { color: blue; }
+                    
+                </li>
+                <li class="blog-list">
+                    <h3>Element Selector</h3>
+                    <p>The <b>element selector </b>selects the <b>HTML elements </b> like &lth1&gt; , &ltp&gt; , &ltbutton&gt; , &ltinput&gt; etc. It basically selects everything of the type mentioned . We write it as : </p>
+                        <br> h1{ font-size: 1.5rem ; color: cyan; }
+                    
+                </li>
+                <li class="blog-list">
+                    <h3>Grouping Selector</h3>
+                    <p>This selector is very useful selector. Suppose we want to apply same styles to two or more elements. So what we do is, instead of writing same code again and again using 'element selector' as we saw earlier, we use the <b>'grouping selector' </b>to make our code short and clean. 
+                        <br>Remember, a nice clean code is all that you would want to see rather than seeing a clutter and not understanding a word. So here it goes. We write the grouping selector by inserting commas between the elements. Like this: </p>
+                        <br> h3, p{ color: pink ; }
+                        <br>Here, both the &lth3&gt; and  &ltp&gt; will have the color pink. 
+                    
+                </li>
+                <li class="blog-list">
+                    <h3>ID Selector</h3>
+                    <p>
+                        This selector is used for giving CSS styles to any element <b>having an id. </b>In HTML, we give certain class and id to elements to make then unique and give the CSS styles as we want. When we have to define any element with an ID, we write as id="id_name" . 
+                        <br>If we write id in any element, then that means that that id is unique and we cannot give same id to other elements. We can only use a particular id for a single element and is used only once. </p>
+                        <br>If we have any element written as: &ltp id="para-id" &gt; This is example of ID selector &lt/p&gt; 
+                        <br> then for this we'll write in CSS as : #para-id{ color: red; } 
+                    
+                </li>
+                <li class="blog-list">
+                    <h3>Class Selector</h3>
+                    <p>This selector is used to give CSS styles to any element <b>having a class. </b> In HTML, we give class name in any element as class="class_name" .
+                    <br>When we give any element a class, then it means that we can use the same class for multiple elements and all those elements will have the same effect. For e.g : If we have code like </p>
+                    <br>&lth4 class="para-class" &gt; This is line 1 of Class Selector &lt/h4&gt;
+                    <br>&ltp class="para-class" &gt; This is line 2 of ID selector &lt/p&gt; 
+                    <br>then for this CSS would be:
+                    <br>.para-class{ color: green; }
+                </li>
+
+                <li class="blog-list">
+                    <h3>Attribute Selector</h3>
+                    <p>The Attribute Selector selects the elements which have some particular <b>attribute. </b> For example, If we want to select &ltinput&gt; where type attribute is password. So for it we'll write: </p>
+                        <br> input [type="password"] { width:40px; color: yellow; }
+                </li>
+
+            </ol>
+            <hr>
+            <h2 class="topic-heading">CSS Combinators</h2>
+            <ol>
+
+                <li class="blog-list">
+                    <h3>Descendant Selector (space)</h3>
+                    <p>This selector is written by using space. This is used to select elements which are <b>descendants of an element. </b> </p>
+                        <br>Suppose I have two &lta&gt; inside a &ltli&gt; and we want it to have violet color. So for that, we'll write:
+                        <br>li a{ color: violet ; } 
+                </li>
+                <li class="blog-list">
+                    <h3>Adjacent Selector (+)</h3>
+                    <p>The Adjacent Selector is used to select those elements which are <b>directly under a particular element. </b> Like if I have &ltp&gt; under &lth1&gt; then for that I willwrite: </p>
+                        <br> h1 + p { color: yellow; }   
+                        <br>Note that here + is a combinator
+                </li>
+
+                <li class="blog-list"> 
+                    <h3>Direct Child Selector (>)</h3>
+                    <p>Direct Child Seletor selects all the elements which are <b>child of a specified element. </b> For selecting a &ltli&gt; under a &ltdiv&gt; we write: </p>
+                        <br> div &gt; li{ color: grey; }
+                </li>
+
+                <li class="blog-list">
+                    <h3>General Sibling Selector (~) </h3>
+                    <p>The General Sibling Selector selects the elements which are the siblings. If we have &ltdiv&gt; under a &ltp&gt; (not necessarily immediately), then we can write: </p>
+                    <br> div ~ p{ color: cream; }
+                </li>
+            </ol>
+        </p>
+    </article>
+    <footer class="footer">
+        <div class="footer-header">Contact me</div>
+            <ul class="social-links list-non-bullet">
+                <li class="list-item-inline">
+                    <a class="link" href="https://twitter.com/ItsZoya28">Twitter</a>
+                </li>
+                <li class="list-item-inline">
+                    <a class="link" href="https://github.com/zoyatanweer">Github</a>
+                </li>
+                <li class="list-item-inline">
+                    <a class="link" href="https://www.linkedin.com/in/zoya-tanweer-9440431b9">LinkedIn</a>
+                </li>
+            </ul>
+    </footer>
